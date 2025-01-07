@@ -1,6 +1,6 @@
 # ft_transcendence Backlog
 ## Chapter III - Mandatory Part
-### 1. Overview
+### III.1. Overview
 
 Thanks to your website, users will play Pong with others. You have to provide a nice
 user interface and real-time multiplayer online games!
