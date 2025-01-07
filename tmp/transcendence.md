@@ -16,7 +16,7 @@ choices that will evolve over time. Pay close attention to the version of the su
 
 Your project has to comply with the following rules:
 
-[!IMPORTANT] 
+>[!IMPORTANT] 
 Again, some of these contraints could be overriden by the choice of
 specific modules.
 
