@@ -4,9 +4,9 @@
 
 Thanks to your website, users will play Pong with others. You have to provide a nice
 user interface and real-time multiplayer online games!
-• Your project needs to adhere to the following guidelines as a minimum requirement,
+- Your project needs to adhere to the following guidelines as a minimum requirement,
 contributing only a small portion to the final grade.
-• The second part of this subject will offer additional modules that can replace or
+- The second part of this subject will offer additional modules that can replace or
 complete the following rules.
 In this Subject, certain words are highlighted in green. These represent technology
 choices that will evolve over time. Pay close attention to the version of the subject.
@@ -16,7 +16,7 @@ choices that will evolve over time. Pay close attention to the version of the su
 
 Your project has to comply with the following rules:
 
-**INFORMATION:** 
+[!IMPORTANT] 
 Again, some of these contraints could be overriden by the choice of
 specific modules.
 
@@ -36,9 +36,11 @@ website.
 • Everything must be launched with a single command line to run an autonomous
 container provided by Docker . Example : docker-compose up --build
 
-**WARNING :** If your container solution is Docker:
-When your computers in clusters run under Linux, you will use Docker
-in rootless mode for security reasons. This comes with 2 sideways:
+[!WARNING]
+
+If your container solution is Docker:
+When your computer is in clusters run under Linux, you will use Docker in rootless mode for security reasons. 
+This comes with 2 sideways:
 • Your Docker runtime files must be located in /goinfre or
 /sgoinfre.
 • You can’t use so called “bind-mount volumes” between the host
@@ -73,7 +75,8 @@ speed as a regular player.
 or you have the option to override it with the Graphics module. While the visual
 aesthetics can vary, it must still capture the essence of the original Pong (1972).
 
-**WARNING :**
+[!WARNING]
+ 
 • The use of libraries or tools that provide an immediate
 and complete solution for a global feature or a module is prohibited.
 • Any direct instruction about the usage (can, must, can’t) of a
@@ -107,10 +110,12 @@ employed.
 to create an API, ensure your routes are protected. Remember, even if you decide
 not to use JWT tokens, securing the site remains essential.
 
-**WARNING :** 
+[!WARNING]
+  
 Please make sure you use a strong password hashing algorithm
 
-**WARNING :** 
+[!WARNING]
+  
 For obvious security reasons, any credentials, API keys, env
 variables etc... must be saved locally in a .env file and ignored by
 git. Publicly stored credentials will lead you directly to a failure
@@ -125,7 +130,8 @@ To attain 100% project completion, a minimum of 7 major modules is required.
 It’s crucial to carefully review each module as it may necessitate modifications to your
 baseline website. Therefore, we strongly recommend reading this entire subject thoroughly
 
-**WARNING :** 
+[!WARNING]
+  
 • The use of libraries or tools that provide an immediate
 and complete solution for a global feature or a module is
 prohibited.
@@ -143,7 +149,8 @@ responsibility and define if the usage of a specific library
 or tool is legitimate (and allowed) or almost solving an entire
 feature or module (and prohibited).
 
-**INFORMATION:**
+[!IMPORTANT] 
+
 Two Minor Modules are equivalent to one Major Module.
 
 ### IV.1 Overview
@@ -196,7 +203,8 @@ These modules enable the integration of advanced web features into your Pong gam
 In this major module, you are required to utilize a specific web framework for your
 backend development, and that framework is Django .
 
-**INFORMATION:**
+[!IMPORTANT] 
+
 You can create the backend without using the constraints of this
 module by using the default language/framework (see above in the
 mandatory part). However, this module will only be valid if you
@@ -206,7 +214,8 @@ follow its requirements.
 Your frontend development must use the Bootstrap toolkit in addition of the
 vanilla Javascript, and nothing else.
 
-**INFORMATION:**
+[!IMPORTANT] 
+
 You can create a front-end without using the constraints of this
 module by using the default front-end directives (see above in the
 mandatory part). However, this module will only be valid if you
@@ -264,14 +273,16 @@ authentication.
     ◦ User profiles display stats, such as wins and losses.
     ◦ Each user has a Match History including 1v1 games, dates, and relevant
     details, accessible to logged-in users.
-**WARNING :**
+[!WARNING]
+ 
 Be carefull, the management of duplicate usernames/emails is at your
 discretion. You must provide a solution that makes sense.
 
 • Major module: Implementing a remote authentication.
 In this major module, the goal is to implement the following authentication system:
 OAuth 2.0 authentication with 42 . Key features and objectives include:
-**WARNING :**
+[!WARNING]
+ 
 Be carefull, the management of duplicate usernames/emails is at your
 discretion. You must provide a solution that makes sense.
     ◦ Integrate the authentication system, allowing users to securely sign in.
@@ -367,7 +378,8 @@ and goals include:
     tation, you must simulate keyboard input. The constraint here is that the AI
     can only refresh its view of the game once per second, requiring it to anticipate
     bounces and other actions.
-**INFORMATION:**
+[!IMPORTANT] 
+
 The AI must utilize power-ups if you have chosen to implement the
 Game customization options module.
     ◦ Implement AI logic and decision-making processes that enable the AI player
@@ -377,7 +389,8 @@ Game customization options module.
     ◦ Ensure that the AI adapts to different gameplay scenarios and user interac-
     tions.
 
-**WARNING :**
+[!WARNING]
+ 
 Attention: You will need to explain in detail how your AI is working
 during your evaluation. Creating an AI that does nothing is strictly
 prohibited; it must have the capability to win occasionally.
@@ -721,5 +734,6 @@ and interact with web players. Key features and objectives include:
 This major module aims to enhance the Pong gaming experience by creating a CLI
 that seamlessly connects CLI users to web players through API integration, offering
 a unified and interactive gameplay environment.
-**WARNING :**
+[!WARNING]
+ 
 If you want to do this module, we strongly recommend that you do the previous one.
