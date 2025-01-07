@@ -1,5 +1,6 @@
-Chapter III - MAndatory Part
-1. Overview
+# ft_transcendence Backlog
+## Chapter III - Mandatory Part
+### 1. Overview
 
 Thanks to your website, users will play Pong with others. You have to provide a nice
 user interface and real-time multiplayer online games!
@@ -11,11 +12,11 @@ In this Subject, certain words are highlighted in green. These represent technol
 choices that will evolve over time. Pay close attention to the version of the subject.
 
 
-III.2. Minimal technical requirement
+### III.2. Minimal technical requirement
 
 Your project has to comply with the following rules:
 
-INFORMATION : 
+**INFORMATION:** 
 Again, some of these contraints could be overriden by the choice of
 specific modules.
 
@@ -35,7 +36,7 @@ website.
 • Everything must be launched with a single command line to run an autonomous
 container provided by Docker . Example : docker-compose up --build
 
-WARNING : If your container solution is Docker:
+**WARNING :** If your container solution is Docker:
 When your computers in clusters run under Linux, you will use Docker
 in rootless mode for security reasons. This comes with 2 sideways:
 • Your Docker runtime files must be located in /goinfre or
@@ -47,7 +48,7 @@ fallbacks exist: Docker in a VM, rebuild you container after your
 changes, craft your own docker image with root as unique UID.
 
 
-III.3. Game
+### III.3. Game
 
 The main purpose of this website is to play Pong versus other players.
 • Therefore, users must have the ability to participate in a live Pong game against
@@ -72,7 +73,7 @@ speed as a regular player.
 or you have the option to override it with the Graphics module. While the visual
 aesthetics can vary, it must still capture the essence of the original Pong (1972).
 
-WARNING :
+**WARNING :**
 • The use of libraries or tools that provide an immediate
 and complete solution for a global feature or a module is prohibited.
 • Any direct instruction about the usage (can, must, can’t) of a
@@ -90,7 +91,7 @@ or tool is legitimate (and allowed) or almost solving an entire
 feature or module (and prohibited).
 
 
-III.4. Security concerns
+### III.4. Security concerns
 
 In order to create a basic functional website, here are a few security concerns that you
 have to tackle:
@@ -106,10 +107,10 @@ employed.
 to create an API, ensure your routes are protected. Remember, even if you decide
 not to use JWT tokens, securing the site remains essential.
 
-WARNING : 
+**WARNING :** 
 Please make sure you use a strong password hashing algorithm
 
-WARNING : 
+**WARNING :** 
 For obvious security reasons, any credentials, API keys, env
 variables etc... must be saved locally in a .env file and ignored by
 git. Publicly stored credentials will lead you directly to a failure
@@ -124,7 +125,7 @@ To attain 100% project completion, a minimum of 7 major modules is required.
 It’s crucial to carefully review each module as it may necessitate modifications to your
 baseline website. Therefore, we strongly recommend reading this entire subject thoroughly
 
-WARNING : 
+**WARNING :** 
 • The use of libraries or tools that provide an immediate
 and complete solution for a global feature or a module is
 prohibited.
@@ -142,10 +143,10 @@ responsibility and define if the usage of a specific library
 or tool is legitimate (and allowed) or almost solving an entire
 feature or module (and prohibited).
 
-INFORMATION:
+**INFORMATION:**
 Two Minor Modules are equivalent to one Major Module.
 
-IV.1 Overview
+### IV.1 Overview
 • Web
     ◦ Major module: Use a Framework to build the backend.
     ◦ Minor module: Use a framework or a toolkit to build the frontend.
@@ -188,14 +189,14 @@ Gameplay and user experience
     API Integration.
 
 
-IV.2. Web
+### IV.2. Web
 
 These modules enable the integration of advanced web features into your Pong game.
 • Major module: Use a Framework to build the backend.
 In this major module, you are required to utilize a specific web framework for your
 backend development, and that framework is Django .
 
-INFORMATION:
+**INFORMATION:**
 You can create the backend without using the constraints of this
 module by using the default language/framework (see above in the
 mandatory part). However, this module will only be valid if you
@@ -205,7 +206,7 @@ follow its requirements.
 Your frontend development must use the Bootstrap toolkit in addition of the
 vanilla Javascript, and nothing else.
 
-INFORMATION:
+**INFORMATION:**
 You can create a front-end without using the constraints of this
 module by using the default front-end directives (see above in the
 mandatory part). However, this module will only be valid if you
@@ -245,7 +246,7 @@ of security and transparency, ensuring the integrity of their gaming scores. The
 module emphasizes the use of a testing blockchain environment to minimize risks
 associated with blockchain development.
 
-IV.3 User Management
+### IV.3 User Management
 
 This module delves into the realm of User Management, addressing crucial aspects
 of user interactions and access control within the Pong platform. It encompasses two
@@ -263,14 +264,14 @@ authentication.
     ◦ User profiles display stats, such as wins and losses.
     ◦ Each user has a Match History including 1v1 games, dates, and relevant
     details, accessible to logged-in users.
-WARNING:
+**WARNING :**
 Be carefull, the management of duplicate usernames/emails is at your
 discretion. You must provide a solution that makes sense.
 
 • Major module: Implementing a remote authentication.
 In this major module, the goal is to implement the following authentication system:
 OAuth 2.0 authentication with 42 . Key features and objectives include:
-WARNING:
+**WARNING :**
 Be carefull, the management of duplicate usernames/emails is at your
 discretion. You must provide a solution that makes sense.
     ◦ Integrate the authentication system, allowing users to securely sign in.
@@ -282,7 +283,7 @@ discretion. You must provide a solution that makes sense.
 This major module aims to get a remote user authentication, providing users with
 a secure and convenient way to access the web application
 
-IV.4 Gameplay and user experience
+### IV.4 Gameplay and user experience
 
 These modules are designed to enhance the general gameplay of the project.
 • Major module: Remote players
@@ -349,7 +350,7 @@ game.
 ◦ The user should be able to access other players profiles through the chat in-
 terface.
 
-IV.5 AI-Algo
+### IV.5 AI-Algo
 
 These modules serve to introduce data-driven elements to the project, with the major
 module introducing an AI opponent for enhanced gameplay, and the minor module fo-
@@ -366,7 +367,7 @@ and goals include:
     tation, you must simulate keyboard input. The constraint here is that the AI
     can only refresh its view of the game once per second, requiring it to anticipate
     bounces and other actions.
-INFORMATION:
+**INFORMATION:**
 The AI must utilize power-ups if you have chosen to implement the
 Game customization options module.
     ◦ Implement AI logic and decision-making processes that enable the AI player
@@ -376,7 +377,7 @@ Game customization options module.
     ◦ Ensure that the AI adapts to different gameplay scenarios and user interac-
     tions.
 
-WARNING:
+**WARNING :**
 Attention: You will need to explain in detail how your AI is working
 during your evaluation. Creating an AI that does nothing is strictly
 prohibited; it must have the capability to win occasionally.
@@ -399,7 +400,7 @@ This minor module aims to empower users with the ability to monitor their gaming
 statistics and game session details through user-friendly dashboards, providing a
 comprehensive view of their gaming experience.
 
-IV.6 Cybersecurity
+### IV.6 Cybersecurity
 These cybersecurity modules are designed to bolster the security posture of the project,
 with the major module focusing on robust protection through Web Application Firewall
 (WAF) and ModSecurity configurations and HashiCorp Vault for secure secrets manage-
@@ -470,7 +471,7 @@ This major module aims to strengthen user account security by offering Two-Facto
 Authentication (2FA) and enhancing authentication and authorization through the
 use of JSON Web Tokens (JWT)
 
-IV.7 Devops
+### IV.7 Devops
 
 These modules collectively focus on enhancing the project’s infrastructure and architec-
 ture, with the major modules addressing infrastructure setup for efficient log management
@@ -529,7 +530,7 @@ This major module aims to enhance the system’s architecture by adopting a mi-
 croservices design approach, enabling greater flexibility, scalability, and maintain-
 ability of the backend components.
 
-IV.8 Gaming
+### IV.8 Gaming
 
 These modules are designed to enhance the gamification aspect of the project, with the
 major module introducing new games, user history tracking, and matchmaking, while the
@@ -572,7 +573,7 @@ across all available games by providing a variety of customization options while
 also offering a default version for those who prefer a straightforward gameplay
 experience.
 
-IV.9 Graphics
+### IV.9 Graphics
 
 • Major module: Implementing Advanced 3D Techniques
 This major module, known as "Graphics," is focused on enhancing the visual aspects
@@ -594,7 +595,7 @@ ducing advanced 3D techniques. Through the utilization of ThreeJS/WebGL , we
 aspire to provide players with an immersive and visually stunning gaming experi-
 ence.
 
-IV.10 Accessibility
+### IV.10 Accessibility
 
 These modules are designed to enhance the accessibility of our web application, with a
 focus on ensuring compatibility across all devices, expanding browser support, offering
@@ -675,7 +676,7 @@ include:
 This module aims to boost website performance and SEO by integrating Server-Side
 Rendering for faster page loads and improved user experience.
 
-IV.11 Server-Side Pong
+### IV.11 Server-Side Pong
 
 • Major module: Replacing Basic Pong with Server-Side Pong and Implementing
 an API.
@@ -720,5 +721,5 @@ and interact with web players. Key features and objectives include:
 This major module aims to enhance the Pong gaming experience by creating a CLI
 that seamlessly connects CLI users to web players through API integration, offering
 a unified and interactive gameplay environment.
-WARNING:
+**WARNING :**
 If you want to do this module, we strongly recommend that you do the previous one.
