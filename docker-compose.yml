@@ -1,13 +1,13 @@
 services:
   frontend:
-    build: ./frontend
+    build: ./containers/frontend
     expose:
       - "80"
     networks:
       - transcendence
 
   nginx:
-    build: ./nginx
+    build: ./containers/nginx
     expose:
       - "80"
     ports:
@@ -16,14 +16,14 @@ services:
       - transcendence
 
   database:
-    build: ./database
+    build: ./containers/database
     expose:
     - "5432"
     networks:
       - transcendence
 
 networks:
-  transcendence-nw:
+  transcendence:
     name: transcendence
     driver: bridge
 
