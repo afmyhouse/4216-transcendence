@@ -1,0 +1,29 @@
+services:
+  frontend:
+    build: ./frontend
+    expose:
+      - "80"
+    networks:
+      - transcendence
+
+  nginx:
+    build: ./nginx
+    expose:
+      - "80"
+    ports:
+      - "8443:443"
+    networks:
+      - transcendence
+
+  database:
+    build: ./database
+    expose:
+    - "5432"
+    networks:
+      - transcendence
+
+networks:
+  transcendence-nw:
+    name: transcendence
+    driver: bridge
+
