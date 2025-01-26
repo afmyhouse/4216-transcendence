@@ -3,15 +3,21 @@ services:
     build: ./containers/frontend
     expose:
       - "80"
+    env_file:
+        - .env
+    volumes:
+      - ./containers/frontend/www:/var/www
     networks:
       - transcendence
-
+  
   nginx:
     build: ./containers/nginx
     expose:
       - "80"
     ports:
       - "8443:443"
+    env_file:
+        - .env
     networks:
       - transcendence
 
@@ -19,6 +25,8 @@ services:
     build: ./containers/database
     expose:
     - "5432"
+    env_file:
+        - .env
     networks:
       - transcendence
 
@@ -26,4 +34,3 @@ networks:
   transcendence:
     name: transcendence
     driver: bridge
-
