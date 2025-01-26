@@ -1,0 +1,19 @@
+h1 {
+	font-family: 'Oxanium', sans-serif; /* Set font family if needed */
+    font-size: 9rem; /* Adjust font size as desired */
+}
+
+#typed-text {
+	display: flex;
+	justify-content: center;
+}
+
+.btn .bi {
+	width: 32px;
+	height: 32px;
+	vertical-align: middle;
+}
+
+.dropdown-menu .bi {
+	vertical-align: -.125rem;
+}
