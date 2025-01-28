@@ -57,7 +57,7 @@ export function profile(user) {
                 <label for="lastName" class="form-label">Last name</label>
             </div>
 
-            <div class="button-container" id="profile-btn-container"></div>
+            <div class="btn-toolbar gap-1" id="profile-btn-container"></div>
 `);
 }
 

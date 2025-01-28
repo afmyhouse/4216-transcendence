@@ -75,6 +75,8 @@ const loadProfile = async () => {
 			document.getElementById("close-modal").click();
 		}
 	});
+	const debugMsg = document.getElementById('debug-msg');
+	app.removeChild(debugMsg);
 	app.insertAdjacentElement('afterbegin', userProfile);
 	const buttons = document.getElementById('profile-btn-container');
 	app.insertAdjacentElement('afterbegin', userProfile);
@@ -124,6 +126,7 @@ const loadProfile = async () => {
 				displayToast(result.error, 'alert-danger');
 			}
 		});
+		// Cancel profile editing by clicking the pressing btn
 		// TODO: move to function
 		cancelButton.addEventListener('click', async (e) => {
 			e.preventDefault();
