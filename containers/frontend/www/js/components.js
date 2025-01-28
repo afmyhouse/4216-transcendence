@@ -6,12 +6,11 @@
  */
 import { backGet } from './backAPI.js';
 import { profile as loadProfileHTML} from './loadHTML.js';
-import { alert as loadAlertHTML } from './loadHTML.js';
 
 export async function Dropdown() {
 	const username = document.createElement('span');
 	const response = await backGet('home/'); // TMP: we wont need this to get the user info cause we should have a class with the user logged in with all needed info, i think.. | maybe we will need this but still save the info somewhere maybe
-	if (response.user) {
+	if (response && response.user) {
 		const user = response.user;
 		username.innerHTML = user.username;
 	}

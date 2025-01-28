@@ -34,6 +34,9 @@ const loadLogout = async () => {
 			navigateTo('/');
 		}
 	}
+	// TODO: deal with error while logging out
+	displayToast("NOT COMPLETE", 'alert-info');
+	navigateTo('/'); // REMOVE:
 };
 
 /**
@@ -46,13 +49,18 @@ const loadLogout = async () => {
 const loadProfile = async () => {
 	// NOTE: we prob need a different view to check other user profiles, how to do that no clue for now but we need to be able to click a user avatar/name/search it in a search bar and go to their `dashboard`/`profile` like page
 	const result = await backend.backGet('profile');
-	if (result.error) { // NOTE: I do need to check if the result is fine but i cannot simply return, i prob need to give an error and redirect to another page, why would there be an error, no clue for now
+	components.Dropdown();
+	if (result && result.error) { // NOTE: I do need to check if the result is fine but i cannot simply return, i prob need to give an error and redirect to another page, why would there be an error, no clue for now
 		displayToast(result.error, 'alert-danger');
 		navigateTo('/');
 		return;
 	}
-	const user = result.user;
-	components.Dropdown();
+	let user = undefined;
+	if (result) {
+		user = result.user;	
+	} else {
+		user = {};
+	}
 	const userProfile = components.userProfile(user);
 	app.insertAdjacentHTML("beforebegin", loadHTML.modal());
 	const passApplyBtn = document.getElementById("pass-apply-btn");
@@ -138,6 +146,20 @@ const loadProfile = async () => {
 				e.setAttribute('disabled', 'true');
 			});
 		});
+		// Cancel profile editing by pressing escape key
+		document.addEventListener("keydown", (e) => {
+			e.preventDefault();
+			if (e.code != "Escape") {
+				return ;
+			}
+			buttons.insertAdjacentElement('beforeend', editButton);
+			buttons.removeChild(applyButton);
+			buttons.removeChild(cancelButton);
+			profileImgBox.replaceChild(profileImg, profileImgInput);
+			inputFields.forEach(e => {
+				e.setAttribute('disabled', 'true');
+			});
+		});
 	});
 };
 
@@ -145,6 +167,7 @@ const loadProfile = async () => {
 const loadLogin = () => {
 	app.innerHTML = loadHTML.login();
 	typeText("transcendence");
+	// TODO: change this so that login form is a component we get from components.js | we can call a function to create a form with variable 
 	const loginForm = document.getElementById('login-form');
 	const createCookie = backend.backGet('login/');
 	if (createCookie.error) {
@@ -156,17 +179,10 @@ const loadLogin = () => {
 		const username = document.getElementById('username').value;
 		const password = document.getElementById('password').value;
 		const result = await login(username, password);
-		if (result == null) { // TMP: 
+		if (result == null) { // TMP: quick fix so we get no major errors
 			console.warn("Backend not implemented");
 		}
 		if (result.error) {
-			/*
-			 * TODO: START
-			 * testing with different component for alerts
-			 */
-			const alertTesting = new alert(result.error, "danger");
-			components.alert(alertTesting);
-			/* TODO: END  */
 			displayToast(result.error, 'alert-danger');
 			document.getElementById('username').value = '';
 			document.getElementById('password').value = '';
@@ -267,7 +283,6 @@ export const handleLocation = () => {
 
 // Function to navigate to a new route
 export const navigateTo = (path) => {
-	console.log(path); // REMOVE:
 	window.history.pushState({}, path, window.location.origin + path);
 	handleLocation();
 };

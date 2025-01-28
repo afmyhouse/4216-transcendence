@@ -28,6 +28,12 @@ export const backGet = async (endpoint) => {
 	if (response.status != 200) {
 		return null;
 	}
+	return null; // REMOVE: this is not correct we should properly handle the promise for now since we dont have the backend we just return null since we not sur how we will handle some of this yet
+	/* promise
+	   .then( () => {})
+	   .then( () => {})
+	   .catch(err => {});
+	 */
 	return response.json();
 };
 
@@ -38,8 +44,8 @@ export const backPut = async (endpoint, data) => {
 			'Content-Type': 'application/json',
 			'X-CSRFToken': getCookie('csrftoken'),
 		},
-		body: JSON.stringify(data),
 		// TODO: add body of request -> this will be the user information to update
+		body: JSON.stringify(data),
 	});
 	if (response.status != 200) {
 		return null;
