@@ -62,8 +62,9 @@ export function profile(user) {
 }
 
 export function login() {
-	return (`<form class="w-25 m-auto position-absolute top-50 start-50 translate-middle" id="login-form" autocomplete="off">
+	return (`<form class="position-absolute top-50 start-50 translate-middle" id="login-form" autocomplete="off">
                  <h1 id="typed-text"></h1>
+<div class="container w-25">
                  <div class="form-floating mb-2">
                      <input type="text" class="form-control" id="username" placeholder="username" autocomplete="off" required />
                      <label for="username" class="form-label">Username</label>
@@ -72,20 +73,23 @@ export function login() {
                      <input class="form-control" type="password" id="password" placeholder="password" autocomplete="new-password" required />
                      <label for="password" class="form-label">Password</label>
                  </div>
-                 <div class="button-container">
-                     <button class="btn btn-primary w-100 mb-2" type="submit">Log in
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                             <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
-                             <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                         </svg>
-                     </button>
-                     <button class="btn btn-primary w-100 mb-2" type="button" id="signup-button">Sign Up
-                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                             <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
-                             <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                         </svg>
-                     </button>
-                     <button class="btn btn-primary w-100 mb-2" type="button" id="42Login-button">Login with 42</button>
+</div>
+<div class="container text-center">
+                 <div class="row">
+<div class="col">
+                     <button class="btn btn-primary" type="submit">Log in</button>
+</div>
+<div class="col">
+                     <button class="btn btn-primary" type="button" id="signup-button">Sign Up</button>
+</div>
+<div class="col">
+                     <button class="btn btn-primary" type="button" id="42Login-button">Local Play</button>
+</div>
+</div>
+<div class="row">
+                     <button class="btn btn-primary w-100 mb-1" type="button" id="42Login-button">Login with 42</button>
+</div>
+</div>
                  </div>
          </form>`);
 }
