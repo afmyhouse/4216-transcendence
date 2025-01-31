@@ -274,7 +274,7 @@ const loadLocal = () => {
 const testHTML = () => {
 	document.body.innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Transcendence Pong</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -308,25 +308,71 @@ const testHTML = () => {
     </div>
   </div>
 </nav>
-<div class="container text-center">
-  <div class="row border gap-1 mb-2">
-       <div class="col">
-      NAV bar
-    </div>
-  </div>
-  <div class="row gap-1">
-    <div class="col border">
-        <div class="container-fluid">
-          USER box
+<div class="container mt-3">
+  <div class="row mb-2">
+    <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary-emphasis text-center">USER box</strong>
+                <p class="card-text mb-auto">
+                    <img src="../media/default.png" width="32" height="32" class="border border-2 d-inline-block align-text-center rounded-circle"><a class="link" href="profile">TEST USER</a><a> LEVEL(XP)</a>
+                </p>
+                <p>INSERT LAST 3 GAMES STATS HERE OR SOMETHING SIMILAR</p>
+                    <div class="card-group">
+                      <div class="card">
+                        <div class="card-title ms-1 text-primary-emphasis">Game 1</div>
+                          <div class="card-body text-center">
+                            <p>dd/mm/yyyy - HH:MM</p>
+                            <img src="" width="32" height="32">
+<a class="link" href="#USER1">USER1</a></img>
+                            <br>vs</br>
+                            <img src="" width="32" height="32">                                              <a class="link text-center" href="#USER2">USER2</a>
+                              </img>
+                        </div>
+                        <div class="card-footer text-center">Score: USER1 vs USER2</div>
+                      </div>
+                      <div class="card">
+                        <div class="card-title ms-1 text-primary-emphasis">Game 2</div>
+                        <div class="card-body text-center">
+                            <p>dd/mm/yyyy - HH:MM</p>
+                            <img src="" width="32" height="32">
+<a class="link" href="#USER1">USER1</a></img>
+                            <br>vs</br>
+                            <img src="" width="32" height="32">                                              <a class="link text-center" href="#USER2">USER2</a>
+                              </img>
+                        </div>
+                        <div class="card-footer text-center">Score: USER1 vs USER2</div>
+                      </div>
+                      <div class="card">
+                       <div class="card-title ms-1 text-primary-emphasis">Game 3</div>
+                         <div class="card-body text-center">
+                            <p>dd/mm/yyyy - HH:MM</p>
+                            <img src="" width="32" height="32">
+<a class="link" href="#USER1">USER1</a></img>
+                            <br>vs</br>
+                            <img src="" width="32" height="32">                                              <a class="link text-center" href="#USER2">USER2</a>
+                              </img>
+                      </div>
+                        <div class="card-footer text-center">Score: USER1 vs USER2</div>
+                    </div>
+</div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                   Available for random matches
+                  </label>
+                </div>
+                <a class="link" href="profile">See your profile...</a>
+            </div>
         </div>
     </div>
-    <div class="col border">
-        <div class="container-fluid">
+    <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden row mb-4 shadow-sm h-md-250 position-relative">
             GAME box
             <div class="btn-group gap-1 mb-2 text-nowrap" role="group">
-            <button class="btn btn-primary">Vs Player</button>
-            <button class="btn btn-primary">Vs CPU</button>
-            <button class="btn btn-primary">Enter a tournament</button>
+                <button class="btn btn-primary">Vs Player</button>
+                <button class="btn btn-primary">Vs CPU</button>
+                <button class="btn btn-primary">Enter a tournament</button>
             </div>
         </div>
     </div>
