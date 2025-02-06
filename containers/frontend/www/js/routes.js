@@ -272,43 +272,8 @@ const loadLocal = () => {
 };
 
 const testHTML = () => {
-	document.body.innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Transcendence Pong</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<div class="container mt-3">
+	document.body.innerHTML = `
+<div class="position-absolute start-50 top-50 translate-middle container mt-3">
   <div class="row mb-2">
     <div class="col-md-6">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -326,8 +291,9 @@ const testHTML = () => {
                             <img src="" width="32" height="32">
 <a class="link" href="#USER1">USER1</a></img>
                             <br>vs</br>
-                            <img src="" width="32" height="32">                                              <a class="link text-center" href="#USER2">USER2</a>
-                              </img>
+                            <img src="" width="32" height="32">
+                              <a class="link text-center" href="#USER2">USER2</a>
+                            </img>
                         </div>
                         <div class="card-footer text-center">Score: USER1 vs USER2</div>
                       </div>
@@ -338,8 +304,9 @@ const testHTML = () => {
                             <img src="" width="32" height="32">
 <a class="link" href="#USER1">USER1</a></img>
                             <br>vs</br>
-                            <img src="" width="32" height="32">                                              <a class="link text-center" href="#USER2">USER2</a>
-                              </img>
+                            <img src="" width="32" height="32">
+                              <a class="link text-center" href="#USER2">USER2</a>
+                            </img>
                         </div>
                         <div class="card-footer text-center">Score: USER1 vs USER2</div>
                       </div>
@@ -348,10 +315,12 @@ const testHTML = () => {
                          <div class="card-body text-center">
                             <p>dd/mm/yyyy - HH:MM</p>
                             <img src="" width="32" height="32">
-<a class="link" href="#USER1">USER1</a></img>
+                              <a class="link" href="#USER1">USER1</a>
+                            </img>
                             <br>vs</br>
-                            <img src="" width="32" height="32">                                              <a class="link text-center" href="#USER2">USER2</a>
-                              </img>
+                            <img src="" width="32" height="32">
+                              <a class="link text-center" href="#USER2">USER2</a>
+                            </img>
                       </div>
                         <div class="card-footer text-center">Score: USER1 vs USER2</div>
                     </div>
@@ -366,7 +335,7 @@ const testHTML = () => {
             </div>
         </div>
     </div>
-    <div class="col-md-6">
+        <div class="col-md-6">
         <div class="row g-0 border rounded overflow-hidden row mb-4 shadow-sm h-md-250 position-relative">
             GAME box
             <div class="btn-group gap-1 mb-2 text-nowrap" role="group">
@@ -377,7 +346,116 @@ const testHTML = () => {
         </div>
     </div>
   </div>
-</div>`;
+</div>
+<canvas id="canvas" height="300" width="300" class="position-absolute start-50 top-50 translate-middle z-n1 w-50">The current time</canvas>`;
+	function clock() {
+		let height = 300;
+		let width = 300;
+		const now = new Date();
+		const canvas = document.getElementById("canvas");
+		const ctx = canvas.getContext("2d");
+		ctx.save();
+		ctx.clearRect(0, 0, width, height);
+		ctx.translate(width/2, height/2);
+		ctx.scale(0.4, 0.4);
+		ctx.rotate(-Math.PI / 2);
+		ctx.strokeStyle = "black";
+		ctx.fillStyle = "white";
+		ctx.lineWidth = 8;
+		ctx.lineCap = "round";
+
+		// Hour marks
+		ctx.save();
+		for (let i = 0; i < 12; i++) {
+			ctx.beginPath();
+			ctx.rotate(Math.PI / 6);
+			ctx.moveTo(100, 0);
+			ctx.lineTo(120, 0);
+			ctx.stroke();
+		}
+		ctx.restore();
+		
+  // Minute marks
+		ctx.save();
+		ctx.lineWidth = 5;
+		for (let i = 0; i < 60; i++) {
+			if (i % 5 !== 0) {
+				ctx.beginPath();
+				ctx.moveTo(117, 0);
+				ctx.lineTo(120, 0);
+				ctx.stroke();
+			}
+			ctx.rotate(Math.PI / 30);
+		}
+		ctx.restore();
+		
+		const sec = now.getSeconds();
+		// To display a clock with a sweeping second hand, use:
+		// const sec = now.getSeconds() + now.getMilliseconds() / 1000;
+		const min = now.getMinutes();
+		const hr = now.getHours() % 12;
+		
+		ctx.fillStyle = "black";
+		
+		// Write image description
+		canvas.innerText = `The time is: ${hr}:${min}`;
+		
+		// Write Hours
+		ctx.save();
+		ctx.rotate(
+			(Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec,
+		);
+		ctx.lineWidth = 14;
+		ctx.beginPath();
+		ctx.moveTo(-20, 0);
+		ctx.lineTo(80, 0);
+		ctx.stroke();
+		ctx.restore();
+		
+		// Write Minutes
+		ctx.save();
+		ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec);
+		ctx.lineWidth = 10;
+		ctx.beginPath();
+		ctx.moveTo(-28, 0);
+		ctx.lineTo(112, 0);
+		ctx.stroke();
+		ctx.restore();
+
+		// Write seconds
+		ctx.save();
+		ctx.rotate((sec * Math.PI) / 30);
+		ctx.strokeStyle = "#D40000";
+		ctx.fillStyle = "#D40000";
+		ctx.lineWidth = 6;
+		ctx.beginPath();
+		ctx.moveTo(-30, 0);
+		ctx.lineTo(83, 0);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(0, 0, 10, 0, Math.PI * 2, true);
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(95, 0, 10, 0, Math.PI * 2, true);
+		ctx.stroke();
+		ctx.fillStyle = "rgb(0 0 0 / 0%)";
+		ctx.arc(0, 0, 3, 0, Math.PI * 2, true);
+		ctx.fill();
+		ctx.restore();
+
+		ctx.beginPath();
+		ctx.lineWidth = 14;
+		ctx.strokeStyle = "#325FA2";
+		ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
+		ctx.stroke();
+
+		ctx.restore();
+
+		window.requestAnimationFrame(clock);
+	}
+
+	window.requestAnimationFrame(clock);
+
 };
 
 // Available routes and corresponding funcs to load them
