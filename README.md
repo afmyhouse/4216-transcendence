@@ -1,4 +1,4 @@
-Chapter III - MAndatory Part
+#Chapter III - Mandatory Part#
 1. Overview
 
 Thanks to your website, users will play Pong with others. You have to provide a nice
